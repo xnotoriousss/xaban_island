@@ -6,7 +6,7 @@
 	<style type="text/css">
 		html,body {
 			background-color: #111111;
-			color: #fff;
+			color: #000;
 			font-family: helvetica, arial, sans-serif;
 			margin: 0;
 			padding: 0;
@@ -21,12 +21,252 @@
 			bottom: 0;
 			margin: auto;
 		}
+		
+		.itemContainer {
+			height: 32px;
+			width: 32px;
+			position: absolute;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		
+		.result{
+			height: 65px;
+			width: 355px;
+			position: absolute;
+		}
+		
+		
+		.inventory{
+			height: 65px;
+			width: 355px;
+			position: absolute;
+		}
+		
+		.equipment{
+			height: 65px;
+			width: 123px;
+			position: absolute;
+		}
+		
+		.craft{
+			height: 65px;
+			width: 237px;
+			position: absolute;
+		}
+
+		#inventorySlots{
+			top: 88.1%;
+			left: 75.1%;
+			background: url(media/img/inventory.png);
+		}
+		
+		#slot1{
+			top: 15%;
+			left: 3%;
+			background: ;
+		}
+		
+		#slot2{
+			top: 15%;
+			left: 19%;
+			background: ;
+		}
+		
+		#slot3{
+			top: 15%;
+			left: 36%;
+			background: ;
+		}
+		
+		#slot4{
+			top: 15%;
+			left: 53%;
+			background: ;
+		}
+		
+		#slot5{
+			top: 15%;
+			left: 70%;
+			background: ;
+		}
+		
+		#slot6{
+			top: 15%;
+			left: 86.7%;
+			background: ;
+		}
+		
+		#craftSlots{
+			top: 80%;
+			left: 57.5%;
+			background: url(media/img/craft.png);
+		}
+		
+		#cslot1{
+			top: 15%;
+			left: 5%;
+			background: ;
+		}
+		
+		#cslot2{
+			top: 15%;
+			left: 29%;
+			background: ;
+		}
+		
+		#cslot3{
+			top: 15%;
+			left: 54%;
+			background: ;
+		}
+		
+		#cslot4{
+			top: 15%;
+			left: 79%;
+			background: ;
+		}
+		
+		#equipSlots{
+			top: 80%;
+			left: 75.1%;
+			background: url(media/img/equipment.png);
+		}
+		
+		#eslot1{
+			top: 15%;
+			left: 10%;
+			background: ;
+		}
+		
+		#eslot2{
+			top: 15%;
+			left: 60%;
+			background: ;
+		}
+		
+		
+		#resultSlots{
+			top: 88.1%;
+			left: 50.1%;
+			background: url(media/img/results.png);
+		}
+		
+		#rslot1{
+			top: 15%;
+			left: 3%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
+		
+		#rslot2{
+			top: 15%;
+			left: 19%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
+		
+		#rslot3{
+			top: 15%;
+			left: 36%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
+		
+		#rslot4{
+			top: 15%;
+			left: 53%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
+		
+		#rslot5{
+			top: 15%;
+			left: 70%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
+		
+		#rslot6{
+			top: 15%;
+			left: 86.7%;
+			background: ;
+			-webkit-filter: grayscale(0%);
+		}
 	</style>
 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/impact/impact.js"></script>
 	<script type="text/javascript" src="lib/game/main.js"></script>
 </head>
 <body>
-	<canvas id="canvas"></canvas>
+	<canvas id="canvas">
+	</canvas>
+	<div id="inventorySlots" class="inventory">
+		<div id="slot1" class="itemContainer">
+			<p id="slot1Num"> </p>
+		</div>
+		<div id="slot2" class="itemContainer">
+			<p id="slot2Num"> </p>
+		</div>
+		<div id="slot3" class="itemContainer">
+			<p id="slot3Num"> </p>
+		</div>
+		<div id="slot4" class="itemContainer">
+			<p id="slot4Num"> </p>
+		</div>
+		<div id="slot5" class="itemContainer">
+			<p id="slot5Num"> </p>
+		</div>
+		<div id="slot6" class="itemContainer">
+			<p id="slot6Num"> </p>
+		</div>
+	</div>
+	<div id="craftSlots" class="craft">
+		<div id="cslot1" class="itemContainer">
+			<p id="cslot1Num"> </p>
+		</div>
+		<div id="cslot2" class="itemContainer">
+			<p id="cslot2Num"> </p>
+		</div>
+		<div id="cslot3" class="itemContainer">
+			<p id="cslot3Num"> </p>
+		</div>
+		<div id="cslot4" class="itemContainer">
+			<p id="cslot4Num"> </p>
+		</div>
+	</div>
+	<div id="resultSlots" class="result" >
+		<div id="rslot1" class="itemContainer" >
+			<p id="rslot1Num"> </p>
+		</div>
+		<div id="rslot2" class="itemContainer">
+			<p id="rslot2Num"> </p>
+		</div>
+		<div id="rslot3" class="itemContainer">
+			<p id="rslot3Num"> </p>
+		</div>
+		<div id="rslot4" class="itemContainer">
+			<p id="rslot4Num"> </p>
+		</div>
+		<div id="rslot5" class="itemContainer">
+			<p id="rslot5Num"> </p>
+		</div>
+		<div id="rslot6" class="itemContainer">
+			<p id="rslot6Num"> </p>
+		</div>
+	</div>
+	<div id="equipSlots" class="equipment">
+		<div id="eslot1" class="itemContainer">
+			<p id="e1durability"> </p>
+		</div>
+		<div id="eslot2" class="itemContainer">
+			<p id="e2durabiltiy"> </p>
+		</div>
+	</div>
 </body>
 </html>
