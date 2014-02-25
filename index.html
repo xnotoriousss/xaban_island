@@ -22,7 +22,7 @@
 			margin: auto;
 		}
 		
-		.itemContainer {
+		.itemContainer{
 			height: 32px;
 			width: 32px;
 			position: absolute;
@@ -32,6 +32,7 @@
 			-moz-user-select: none;
 			-ms-user-select: none;
 			user-select: none;
+			cursor: default;
 		}
 		
 		.result{
@@ -199,11 +200,12 @@
 		}
 	</style>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script type="text/javascript" src="lib/impact/impact.js"></script>
 	<script type="text/javascript" src="lib/game/main.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 	<canvas id="canvas">
 	</canvas>
 	<div id="inventorySlots" class="inventory">
